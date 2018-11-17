@@ -1,0 +1,3 @@
+# Fix location of cmake files.
+mkdir -p %{buildroot}%{_datadir}/cmake/Modules
+find %{buildroot} -name "*.cmake" -exec mv {} %{buildroot}%{_datadir}/cmake/Modules/ \;

@@ -1,0 +1,5 @@
+OpenColorIO-gcc.patch
+OpenColorIO-setuptools.patch
+ocio-1.1.0-gcc8.patch
+ocio-1.1.0-yamlcpp060.patch
+ocio-1.1.0-gl-include.patch

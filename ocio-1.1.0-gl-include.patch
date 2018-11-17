@@ -1,0 +1,25 @@
+From 94b002cce6c77029e947fede074c5ec24437b434 Mon Sep 17 00:00:00 2001
+From: Sean V Kelley <sean.v.kelley@linux.intel.com>
+Date: Tue, 20 Nov 2018 17:22:04 -0800
+Subject: [PATCH] Fix include conflict for gl
+
+Signed-off-by: Sean V Kelley <sean.v.kelley@linux.intel.com>
+---
+ src/apps/ociodisplay/main.cpp | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/apps/ociodisplay/main.cpp b/src/apps/ociodisplay/main.cpp
+index 447c0da..b9efec7 100644
+--- a/src/apps/ociodisplay/main.cpp
++++ b/src/apps/ociodisplay/main.cpp
+@@ -55,7 +55,6 @@ namespace OIIO = OIIO_NAMESPACE;
+ #else
+ #include <GL/glew.h>
+ #include <GL/gl.h>
+-#include <GL/glext.h>
+ #include <GL/glut.h>
+ #endif
+ 
+-- 
+2.19.1
+
