@@ -4,7 +4,7 @@
 #
 Name     : OpenColorIO
 Version  : 1.1.0
-Release  : 12
+Release  : 13
 URL      : https://github.com/imageworks/OpenColorIO/archive/v1.1.0.tar.gz
 Source0  : https://github.com/imageworks/OpenColorIO/archive/v1.1.0.tar.gz
 Summary  : A color management framework for visual effects and animation
