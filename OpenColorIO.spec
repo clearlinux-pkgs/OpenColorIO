@@ -4,7 +4,7 @@
 #
 Name     : OpenColorIO
 Version  : 1.1.1
-Release  : 18
+Release  : 19
 URL      : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Source0  : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Summary  : A color management framework for visual effects and animation
@@ -127,13 +127,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575611538
+export SOURCE_DATE_EPOCH=1592457563
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake .. -DOCIO_BUILD_STATIC=OFF \
 -DOCIO_BUILD_DOCS=OFF \
@@ -156,7 +156,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd clr-build; make test; popd
 
 %install
-export SOURCE_DATE_EPOCH=1575611538
+export SOURCE_DATE_EPOCH=1592457563
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/OpenColorIO
 cp %{_builddir}/OpenColorIO-1.1.1/LICENSE %{buildroot}/usr/share/package-licenses/OpenColorIO/aebde2c9b3c7336f785ac928e2ef98959f70ac27
