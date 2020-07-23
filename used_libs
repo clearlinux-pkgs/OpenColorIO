@@ -1,9 +1,5 @@
-libGL.so.1
-libGLEW.so.2.1
-libOpenImageIO.so.1.8
 libc.so.6
 libgcc_s.so.1
-libglut.so.3
 liblcms2.so.2
 libm.so.6
 libstdc++.so.6

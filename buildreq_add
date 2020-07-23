@@ -7,5 +7,5 @@ markupsafe-python
 setuptools-python
 yaml-cpp-dev
 lcms2-dev
-oiio-dev
+#oiio-dev
 openexr-dev

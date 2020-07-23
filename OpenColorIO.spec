@@ -4,7 +4,7 @@
 #
 Name     : OpenColorIO
 Version  : 1.1.1
-Release  : 20
+Release  : 21
 URL      : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Source0  : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Summary  : A color management framework for visual effects and animation
@@ -25,7 +25,6 @@ BuildRequires : glu-dev
 BuildRequires : lcms2-dev
 BuildRequires : markupsafe-python
 BuildRequires : mesa-dev
-BuildRequires : oiio-dev
 BuildRequires : openexr-dev
 BuildRequires : openjdk11
 BuildRequires : openjdk11-dev
@@ -127,7 +126,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592457563
+export SOURCE_DATE_EPOCH=1595525905
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -145,7 +144,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 -DUSE_EXTERNAL_LCMS=TRUE \
 -DUSE_EXTERNAL_SETUPTOOLS=TRUE \
 -DOpenGL_GL_PREFERENCE=GLVND
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %check
@@ -156,7 +155,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd clr-build; make test; popd
 
 %install
-export SOURCE_DATE_EPOCH=1592457563
+export SOURCE_DATE_EPOCH=1595525905
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/OpenColorIO
 cp %{_builddir}/OpenColorIO-1.1.1/LICENSE %{buildroot}/usr/share/package-licenses/OpenColorIO/aebde2c9b3c7336f785ac928e2ef98959f70ac27
@@ -181,9 +180,6 @@ rm -rf %{buildroot}/usr/lib64/python$ver/site-packages
 %defattr(-,root,root,-)
 /usr/bin/ociobakelut
 /usr/bin/ociocheck
-/usr/bin/ocioconvert
-/usr/bin/ociodisplay
-/usr/bin/ociolutimage
 
 %files data
 %defattr(-,root,root,-)
