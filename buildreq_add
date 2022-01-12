@@ -4,7 +4,6 @@ glew-dev
 python3
 python3-dev
 markupsafe-python
-setuptools-python
 yaml-cpp-dev
 lcms2-dev
 #oiio-dev

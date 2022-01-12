@@ -4,7 +4,7 @@
 #
 Name     : OpenColorIO
 Version  : 1.1.1
-Release  : 34
+Release  : 35
 URL      : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Source0  : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Summary  : A color management framework for visual effects and animation
@@ -32,7 +32,6 @@ BuildRequires : pkgconfig(lcms2)
 BuildRequires : pkgconfig(yaml-cpp)
 BuildRequires : python3
 BuildRequires : python3-dev
-BuildRequires : setuptools-python
 BuildRequires : texlive
 BuildRequires : yaml-cpp-dev
 Patch1: OpenColorIO-setuptools.patch
@@ -126,7 +125,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595525905
+export SOURCE_DATE_EPOCH=1641950511
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -155,7 +154,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd clr-build; make test; popd
 
 %install
-export SOURCE_DATE_EPOCH=1595525905
+export SOURCE_DATE_EPOCH=1641950511
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/OpenColorIO
 cp %{_builddir}/OpenColorIO-1.1.1/LICENSE %{buildroot}/usr/share/package-licenses/OpenColorIO/aebde2c9b3c7336f785ac928e2ef98959f70ac27
