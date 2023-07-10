@@ -5,7 +5,7 @@
 #
 Name     : OpenColorIO
 Version  : 1.1.1
-Release  : 38
+Release  : 39
 URL      : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Source0  : https://github.com/imageworks/OpenColorIO/archive/v1.1.1/OpenColorIO-1.1.1.tar.gz
 Summary  : A color management framework for visual effects and animation
@@ -128,7 +128,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688997313
+export SOURCE_DATE_EPOCH=1689005610
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -180,7 +180,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 pushd clr-build; make test; popd
 
 %install
-export SOURCE_DATE_EPOCH=1688997313
+export SOURCE_DATE_EPOCH=1689005610
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/OpenColorIO
 cp %{_builddir}/OpenColorIO-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/OpenColorIO/aebde2c9b3c7336f785ac928e2ef98959f70ac27 || :
@@ -198,7 +198,7 @@ find %{buildroot} -name "*.cmake" -exec mv {} %{buildroot}%{_datadir}/cmake/Modu
 ver=$(pkg-config python3 --modversion)
 mkdir -p %{buildroot}/usr/lib/python$ver/site-packages
 cp -a %{buildroot}/usr/lib64/python$ver/site-packages/* %{buildroot}/usr/lib/python$ver/site-packages/
-rm -rf %{buildroot}/usr/lib64/python$ver/site-packages
+rm -rf %{buildroot}*/usr/lib64/python$ver/site-packages
 ## install_append end
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
@@ -230,7 +230,6 @@ rm -rf %{buildroot}/usr/lib64/python$ver/site-packages
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/libOpenColorIO.so.1.1.1
-/V3/usr/lib64/python3.11/site-packages/PyOpenColorIO.so
 /usr/lib64/libOpenColorIO.so.1
 /usr/lib64/libOpenColorIO.so.1.1.1
 

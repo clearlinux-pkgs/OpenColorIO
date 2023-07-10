@@ -5,4 +5,4 @@ find %{buildroot} -name "*.cmake" -exec mv {} %{buildroot}%{_datadir}/cmake/Modu
 ver=$(pkg-config python3 --modversion)
 mkdir -p %{buildroot}/usr/lib/python$ver/site-packages
 cp -a %{buildroot}/usr/lib64/python$ver/site-packages/* %{buildroot}/usr/lib/python$ver/site-packages/
-rm -rf %{buildroot}/usr/lib64/python$ver/site-packages
+rm -rf %{buildroot}*/usr/lib64/python$ver/site-packages
