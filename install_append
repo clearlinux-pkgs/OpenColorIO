@@ -1,8 +1,0 @@
-# Fix location of cmake files.
-mkdir -p %{buildroot}%{_datadir}/cmake/Modules
-find %{buildroot} -name "*.cmake" -exec mv {} %{buildroot}%{_datadir}/cmake/Modules/ \;
-# Relocate site-packages content
-ver=$(pkg-config python3 --modversion)
-mkdir -p %{buildroot}/usr/lib/python$ver/site-packages
-cp -a %{buildroot}/usr/lib64/python$ver/site-packages/* %{buildroot}/usr/lib/python$ver/site-packages/
-rm -rf %{buildroot}*/usr/lib64/python$ver/site-packages
